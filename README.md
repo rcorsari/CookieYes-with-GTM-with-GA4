@@ -239,46 +239,60 @@ Nello script sostituisci `G-XXXXXXXX` con il tuo ID Google Analytics 4.
 
 ---
 
-## 🧪 FASE 9 – Test banner CookieYes e categorie
+---
 
-1. Vai su **Cookie Manager** in CookieYes
-2. Lancia una **scansione manuale** del sito
-3. Se non vengono rilevati cookie analitici, aggiungine uno fittizio
-4. Pubblica le modifiche
-5. Ora gli switch compariranno
+## 🧪 FASE 9 – Verifica CookieYes e disponibilità categorie
+
+1. Accedi al pannello CookieYes.
+2. Vai su **Cookie Manager**.
+3. Esegui una **scansione manuale** del sito.
+4. Controlla che siano rilevati correttamente i cookie analitici (es: quelli di Google Analytics).
+5. Se non rilevati automaticamente, aggiungili manualmente.
+6. Pubblica le modifiche.
+7. Verifica che sul banner compaiano:
+   - La categoria **Analitici**
+   - Gli switch per consentire o rifiutare i cookie analitici.
 
 ---
 
-## 🧠 FASE 10 – Verifica Livello Dati e stato consenso
+## 🧠 FASE 10 – Verifica finale completa tramite Tag Assistant
 
-1. In **Tag Assistant**, clicca sull’evento `cookie_consent_update`
-2. Nel tab **Variabili**, controlla: `analyticscookies == granted`
-3. Nel tab **Consenso**, verifica: `analytics_storage: granted`
-
----
-
-## ✅ FASE 11 – Validazione finale
-
-| Caso                          | analyticscookies | GA4 parte? |
-|-------------------------------|------------------|------------|
-| Nessun consenso dato          | denied           | ❌ No      |
-| Solo consenso “Necessari”     | denied           | ❌ No      |
-| Accettati “Analitici”         | granted          | ✅ Sì       |
+1. Torna su **Tag Assistant** con la modalità **Anteprima** attiva.
+2. Ripeti i test:
+   - **Con cookie analitici disabilitati**: GA4 **non deve attivarsi**.
+   - **Con cookie analitici abilitati**: GA4 **deve attivarsi**.
+3. Controlla sempre nei tab:
+   - **Tag** → attivazione corretta del tag `GA4 - page_view + consent`.
+   - **Variabili** → stato corretto di `analyticscookies`.
+   - **Consenso** → `analytics_storage` riflette il consenso effettivo.
 
 ---
 
-## 💾 FASE 12 – Backup e consigli finali
+## ✅ FASE 11 – Conformità raggiunta
 
-1. Vai su **Amministrazione GTM**
-2. Esporta il contenitore `.json` per backup
+Se i test hanno dato esito positivo:
+
+- ✅ GA4 viene attivato **solo dopo consenso ai cookie analitici**.
+- ✅ Google Consent Mode v2 è correttamente implementato.
+- ✅ Il banner CookieYes permette di **accettare o rifiutare le categorie**.
+
+Il sito è conforme a GDPR, e compatibile con le policy Google aggiornate.
+
+---
+
+## 💾 FASE 12 – Backup consigliato
+
+1. Vai su **Amministrazione** in Google Tag Manager.
+2. Clicca su **Esporta contenitore**.
+3. Salva il file `.json` come copia di sicurezza.
 
 ---
 
 ## 🎉 Fine!
 
-Hai configurato:
-- CookieYes CMP gratuito
-- Google Consent Mode v2
-- Google Analytics 4 solo dopo consenso
+Hai completato correttamente:
+- Configurazione CookieYes CMP gratuito.
+- Integrazione con Google Tag Manager.
+- Attivazione condizionata di Google Analytics 4 solo previa accettazione.
 
-Ora sei **conforme a GDPR** e **Google Mode V2** ✅
+✅ Il tuo sito ora è **conforme** e **future-proof**!
