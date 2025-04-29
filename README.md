@@ -114,12 +114,12 @@ function() {
 
 ---
 
-## 📊 FASE 7 – Crea il tag Google Analytics 4 (custom HTML)
+## 📊 FASE 7 – Crea il tag Google Analytics 4 e assegna i trigger
 
 1. Vai su **Tag > Nuovo**
 2. Nome: `GA4 - page_view + consent`
 3. Tipo: **Tag HTML personalizzato**
-4. Incolla il seguente codice:
+4. Inserisci il seguente codice:
 
 ```html
 <script>
@@ -153,22 +153,20 @@ function() {
 </script>
 ```
 
-Sostituisci `G-XXXXXXXX` con il tuo ID Google Analytics 4.
+5. **Sezione Attivazione**:
+   - Clicca su **Aggiungi Trigger**
+   - Seleziona i trigger:
+     - `GA4 - Dopo consenso`
+     - `GA4 - Se già consentito`
+
+6. Salva il tag.
+
+
+Nello script sostituisci `G-XXXXXXXX` con il tuo ID Google Analytics 4.
 
 ---
 
-## 🔗 FASE 8 – Collega i due trigger al tag GA4
-
-1. Apri il tag `GA4 - page_view + consent`
-2. Nella sezione **Attivazione**, clicca su `+`
-3. Aggiungi:
-   - `GA4 - Dopo consenso`
-   - `GA4 - Se già consentito`
-4. Salva
-
----
-
-## 🚀 FASE 9 – Pubblica e testa in modalità anteprima
+## 🚀 FASE 8 – Pubblica e testa in modalità anteprima
 
 1. In GTM, clicca su **Anteprima**
 2. Inserisci il tuo sito
@@ -180,7 +178,7 @@ Sostituisci `G-XXXXXXXX` con il tuo ID Google Analytics 4.
 
 ---
 
-## 🧪 FASE 10 – Test banner CookieYes e categorie
+## 🧪 FASE 9 – Test banner CookieYes e categorie
 
 1. Vai su **Cookie Manager** in CookieYes
 2. Lancia una **scansione manuale** del sito
@@ -190,7 +188,7 @@ Sostituisci `G-XXXXXXXX` con il tuo ID Google Analytics 4.
 
 ---
 
-## 🧠 FASE 11 – Verifica Livello Dati e stato consenso
+## 🧠 FASE 10 – Verifica Livello Dati e stato consenso
 
 1. In **Tag Assistant**, clicca sull’evento `cookie_consent_update`
 2. Nel tab **Variabili**, controlla: `analyticscookies == granted`
@@ -198,7 +196,7 @@ Sostituisci `G-XXXXXXXX` con il tuo ID Google Analytics 4.
 
 ---
 
-## ✅ FASE 12 – Validazione finale
+## ✅ FASE 11 – Validazione finale
 
 | Caso                          | analyticscookies | GA4 parte? |
 |-------------------------------|------------------|------------|
@@ -208,7 +206,7 @@ Sostituisci `G-XXXXXXXX` con il tuo ID Google Analytics 4.
 
 ---
 
-## 💾 FASE 13 – Backup e consigli finali
+## 💾 FASE 12 – Backup e consigli finali
 
 1. Vai su **Amministrazione GTM**
 2. Esporta il contenitore `.json` per backup
