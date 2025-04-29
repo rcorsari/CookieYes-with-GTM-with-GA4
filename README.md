@@ -70,13 +70,6 @@ function() {
 - Tipo: **Cookie di prima parte**
 - Nome cookie: `cookieyes-consent`
 
-
-### Variabile 2 – `Cookie CookieYes Consent`
-
-- Tipo: **Cookie di prima parte**
-- Nome: `cookieyes-consent`
-- Abilita la voce Decodifica in formato URI il cookie
-
 ---
 
 ## 🎯 FASE 5 – Crea i trigger (attivatori)
