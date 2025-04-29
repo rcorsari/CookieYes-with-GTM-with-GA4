@@ -166,15 +166,76 @@ Nello script sostituisci `G-XXXXXXXX` con il tuo ID Google Analytics 4.
 
 ---
 
-## 🚀 FASE 8 – Pubblica e testa in modalità anteprima
+## 🔍 FASE 8 – Verifica funzionale completa tramite Tag Assistant
 
-1. In GTM, clicca su **Anteprima**
-2. Inserisci il tuo sito
-3. Apri il sito in nuova finestra
-4. Non accettare i cookie → GA4 **non parte**
-5. Accetta i cookie analitici → GA4 **parte**
-6. Verifica in Tag Assistant che `analyticscookies` sia passato a `granted`
-7. Poi clicca su **Pubblica** in GTM
+### 1. Entra in modalità **Anteprima** di Google Tag Manager
+
+- Dal pannello principale di GTM, clicca su **Anteprima**.
+- Inserisci l’URL del tuo sito e clicca su **Connetti**.
+
+### 2. Si apre **Tag Assistant**: controlla che il sito risulti connesso.
+
+### 3. Testa la navigazione SENZA consenso ai cookie analitici
+
+- Sul sito, **non accettare subito i cookie** o clicca su **Rifiuta tutti** se presente.
+- Naviga normalmente una o più pagine.
+
+### 4. Controlla in **Tag Assistant**
+
+- Nell’evento iniziale (`Page View`):
+  - **Tab "Tag"**:
+    - Controlla che il tag `GA4 - page_view + consent` **NON sia stato attivato**.
+  - **Tab "Variabili"**:
+    - Cerca la variabile `analyticscookies`.
+    - Deve risultare: `denied`.
+  - **Tab "Consenso"**:
+    - Valori previsti:
+      - `analytics_storage: denied`
+      - `ad_storage: denied`
+
+---
+
+### 5. Testa la navigazione DOPO consenso ai cookie analitici
+
+- Clicca sul banner CookieYes su **Personalizza preferenze** (o equivalente).
+- **Abilita** la categoria dei **cookie analitici**.
+- **Salva** le preferenze.
+
+### 6. Verifica di nuovo in **Tag Assistant**
+
+- Nell’evento `cookie_consent_update` che si genera:
+  - **Tab "Tag"**:
+    - Il tag `GA4 - page_view + consent` deve **attivarsi**.
+  - **Tab "Variabili"**:
+    - La variabile `analyticscookies` deve risultare ora: `granted`.
+  - **Tab "Consenso"**:
+    - Valori previsti:
+      - `analytics_storage: granted`
+      - `ad_storage: denied`
+
+---
+
+### 7. Opzionale: Disabilita nuovamente i cookie analitici
+
+- Torna al banner CookieYes.
+- Disabilita i cookie analitici.
+- Salva.
+
+### 8. Verifica cosa succede
+
+- Controlla in **Tag Assistant** sull’evento successivo (`cookie_consent_update`):
+  - **Tab "Tag"**:
+    - Il tag `GA4 - page_view + consent` **non dovrebbe più attivarsi**.
+  - **Tab "Variabili"**:
+    - La variabile `analyticscookies` torna a `denied`.
+  - **Tab "Consenso"**:
+    - `analytics_storage: denied`
+
+---
+
+## ✅ Se tutti i test sono superati:
+- GA4 si attiva solo **dopo consenso esplicito**.
+- Sei conforme a GDPR + Google Consent Mode v2.
 
 ---
 
