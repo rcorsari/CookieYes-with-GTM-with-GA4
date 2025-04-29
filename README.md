@@ -23,13 +23,21 @@ Questa guida dettagliata illustra **ogni passaggio** per integrare **CookieYes C
 
 ---
 
-## 🧾 FASE 3 – Ottieni la Website Key per GTM (su CookieYes)
+## 🧾 FASE 3 – Ottieni la Website Key per GTM (da CookieYes)
 
-⚠️ Sei ancora dentro il sito [https://app.cookieyes.com](https://app.cookieyes.com)
+⚠️ Sei ancora dentro [https://app.cookieyes.com](https://app.cookieyes.com)
 
-1. Dal menu laterale sinistro, vai su **Advanced Settings > Google Tag Manager**
-2. Copia la tua **Website Key** (stringa tipo `abc123...`)
-3. Questa chiave ti servirà tra poco in GTM, **non chiudere la pagina**
+1. Nel menu laterale sinistro, vai su **Advanced Settings**.
+2. Clicca su **Get Installation Code**.
+3. Si aprirà una finestra che mostra uno script simile a questo:
+
+```html
+<script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/09cdfb5cd56cec161c706c11/script.js"></script>
+```
+
+4. **La tua Website Key è la parte tra** `client_data/` **e** `/script.js`:
+   - In questo esempio sarebbe: `09cdfb5cd56cec161c706c11`
+5. Copia questa chiave: ti servirà successivamente per configurare il tag CookieYes CMP in Google Tag Manager.
 
 ---
 
@@ -56,6 +64,7 @@ function() {
 
 - Tipo: **Cookie di prima parte**
 - Nome: `cookieyes-consent`
+- Abilita la voce Decodifica in formato URI il cookie
 
 ---
 
