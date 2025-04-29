@@ -49,16 +49,27 @@ Questa guida dettagliata illustra **ogni passaggio** per integrare **CookieYes C
 - Nome: `analyticscookies`
 - Tipo: **Variabile JavaScript personalizzata**
 - Codice:
+
 ```javascript
 function() {
-  var match = document.cookie.match(/cookieyes-consent=([^;]+)/);
-  if (match) {
-    var consent = decodeURIComponent(match[1]);
-    return consent.includes("analytics:yes") ? "granted" : "denied";
+  var consent = {{Cookie CookieYes Consent}};
+  if (consent && consent.includes("analytics:yes")) {
+    return "granted";
+  } else {
+    return "denied";
   }
-  return "denied";
 }
 ```
+
+---
+
+### Variabile 2 – `Cookie CookieYes Consent`
+
+- Vai su **Variabili > Nuova**
+- Nome: `Cookie CookieYes Consent`
+- Tipo: **Cookie di prima parte**
+- Nome cookie: `cookieyes-consent`
+
 
 ### Variabile 2 – `Cookie CookieYes Consent`
 
