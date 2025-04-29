@@ -23,11 +23,13 @@ Questa guida dettagliata illustra **ogni passaggio** per integrare **CookieYes C
 
 ---
 
-## 🧾 FASE 3 – Ottieni la Website Key per GTM
+## 🧾 FASE 3 – Ottieni la Website Key per GTM (su CookieYes)
 
-1. Vai su **Advanced Settings > Google Tag Manager**
+⚠️ Sei ancora dentro il sito [https://app.cookieyes.com](https://app.cookieyes.com)
+
+1. Dal menu laterale sinistro, vai su **Advanced Settings > Google Tag Manager**
 2. Copia la tua **Website Key** (stringa tipo `abc123...`)
-3. Lasciala da parte per usarla in GTM.
+3. Questa chiave ti servirà tra poco in GTM, **non chiudere la pagina**
 
 ---
 
