@@ -76,20 +76,29 @@ function() {
 
 ### Trigger 1 – `GA4 - Dopo consenso`
 
-- Tipo: **Evento personalizzato**
+- Vai su **Trigger > Nuovo**
+- Nome: `GA4 - Dopo consenso`
+- Tipo di trigger: **Evento personalizzato**
 - Nome evento: `cookie_consent_update`
+- Attivazione: **Alcuni eventi personalizzati**
 - Condizione:
-```
-analyticscookies uguale a granted
-```
+  - Variabile: `analyticscookies`
+  - Operatore: uguale a
+  - Valore: `granted`
+
+---
 
 ### Trigger 2 – `GA4 - Se già consentito`
 
-- Tipo: **Inizializzazione del consenso**
+- Vai su **Trigger > Nuovo**
+- Nome: `GA4 - Se già consentito`
+- Tipo di trigger: **Inizializzazione del consenso**
+- Attivazione: **Alcuni eventi**
 - Condizione:
-```
-analyticscookies uguale a granted
-```
+  - Variabile: `analyticscookies`
+  - Operatore: uguale a
+  - Valore: `granted`
+
 
 ---
 
