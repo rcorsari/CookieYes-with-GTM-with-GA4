@@ -32,11 +32,11 @@ Questa guida dettagliata illustra **ogni passaggio** per integrare **CookieYes C
 3. Si aprirà una finestra che mostra uno script simile a questo:
 
 ```html
-<script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/09cdfb5cd56cec161c706c11/script.js"></script>
+<script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/09hfbg5cd56cec161c706c11/script.js"></script>
 ```
 
 4. **La tua Website Key è la parte tra** `client_data/` **e** `/script.js`:
-   - In questo esempio sarebbe: `09cdfb5cd56cec161c706c11`
+   - In questo esempio sarebbe: `09hfbg5cd56cec161c706c11`
 5. Copia questa chiave: ti servirà successivamente per configurare il tag CookieYes CMP in Google Tag Manager.
 
 ---
