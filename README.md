@@ -108,7 +108,7 @@ function() {
 2. Nome: `CookieYes CMP`
 3. Clicca su **Sfoglia galleria tag**
 4. Cerca `CookieYes CMP` e selezionalo
-5. Inserisci la **Website Key**
+5. Inserisci la **Website Key** salvata alla FASE 3
 6. Attivatore: `All Pages`
 7. Salva
 
