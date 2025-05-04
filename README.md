@@ -25,7 +25,7 @@ Questa guida dettagliata illustra **ogni passaggio** per integrare **CookieYes C
 1. Nel menu, vai su **Cookie Banner > Support GCM**.
 2. Attiva:
    - ✅ “Support Google Consent Mode”
-3. Disattiva:
+3. Disattiva (verifica se legale nel tuo paese, altrimenti abilitalo):
    - ❌ “Allow Google tags to fire before consent”
 4. Salva le modifiche.
 
