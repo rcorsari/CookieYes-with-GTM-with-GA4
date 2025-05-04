@@ -2,6 +2,14 @@
 
 Questa guida dettagliata illustra **ogni passaggio** per integrare **CookieYes CMP gratuito** con **Google Tag Manager** e far sì che **Google Analytics 4 venga attivato solo dopo consenso esplicito ai cookie analitici**.
 
+## 🔢 PREREQUISITI – Account Google GA4 e GTM e accunt CookieYes
+
+1. Occorre avere l'account Google Analytics e quello Tag Manager
+2. Account CookieYes nei punti successivi
+3. Annotare il codice di GA4
+4. Occorre avere lo scritp GTM nel HEAD del sito
+5. Occorre avere il noscript GTM subito dopo il tag BODY del sito
+
 ---
 
 ## 🔢 FASE 1 – Registrazione e configurazione iniziale su CookieYes
