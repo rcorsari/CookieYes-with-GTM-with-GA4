@@ -31,7 +31,7 @@ Questa guida dettagliata illustra **ogni passaggio** per integrare **CookieYes C
 
 ---
 
-## 🧾 FASE 3 – Ottieni la Website Key per GTM (da CookieYes)
+## 🧾 FASE 3 – Ottieni la Website Key di CookieYes che occorre a GTM
 
 ⚠️ Sei ancora dentro [https://app.cookieyes.com](https://app.cookieyes.com)
 
